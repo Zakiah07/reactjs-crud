@@ -16,7 +16,8 @@ function App() {
       taskName: newTask,
       completed: false,
     };
-    setTodoList(task.taskName !== "" ? [...todoList, task] : todoList);
+    // const newTodoList = [...todoList, newTask]; // formal way
+    setTodoList(task.taskName !== "" ? [...todoList, task] : todoList); // this is better
   };
 
   const deleteTask = (id) => {
@@ -39,7 +40,7 @@ function App() {
     <div className="App">
       <div className="addTask">
         <input onChange={handleChange} />
-        <button onClick={addTask}> Add Task</button>
+        <button onClick={addTask}> Add Task </button>
       </div>
       <div className="list">
         {todoList.map((task) => {
